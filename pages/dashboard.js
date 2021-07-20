@@ -3,7 +3,7 @@ import useAuth from "../hooks/useAuth";
 const Dashboard = () => {
   const { user, loading } = useAuth();
 
-  console.log(user)
+  console.log({user})
 
   return (
     <>

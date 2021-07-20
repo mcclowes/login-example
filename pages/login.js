@@ -9,13 +9,9 @@ export default function Login() {
 
     const { elements } = event.target;
 
-    console.log({event})
-
     const did = await new Magic(process.env.NEXT_PUBLIC_MAGIC_PUB_KEY)
       .auth
       .loginWithMagicLink({ email: elements.email.value })
-
-    console.log({did})
 
     // Once we have the did from magic, login with our own API
     const authRequest = await fetch('/api/login', {
